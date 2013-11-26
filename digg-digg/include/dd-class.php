@@ -2308,6 +2308,54 @@ class DD_Tumblr extends BaseDD{
     }
 }
 
+/******************************************************************************************
+ *
+ * https://managewp.org
+ *
+ */
+class DD_ManageWP extends BaseDD {
+    var $name = "ManageWP.org";
+    var $websiteURL = "https://managewp.org";
+    var $apiURL = "http://managewp.org/resources";
+    
+    var $baseURL = '<script type="text/javascript" src="//managewp.org/share.js" data-url="VOTE_URL" data-type="VOTE_BUTTON_DESIGN" data-title="VOTE_TITLE"></script>'; // vote button URL, before construt
 
+    var $isEncodeRequired = false;
+    var $islazyLoadAvailable = false;
+    
+    var $float_button_design = self::DEFAULT_BUTTON_DESIGN;
+    
+    var $buttonLayout = array(
+        "Normal" => "big",
+        "Compact" => "small"
+    );
+    
+    // Default options
+    var $append_type = 'left_float';
+    var $button_design = self::DEFAULT_BUTTON_DESIGN;
+    var $ajax_left_float = 'on';
+    var $lazy_load = false;
 
-?>
+    var $button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+
+    const OPTION_APPEND_TYPE     = "dd_managewp_appendType";
+    const OPTION_BUTTON_DESIGN   = "dd_managewp_buttonDesign";
+    const OPTION_BUTTON_WEIGHT   = "dd_managewp_button_weight";
+    const OPTION_AJAX_LEFT_FLOAT = "dd_managewp_ajax_left_float";
+    const OPTION_LAZY_LOAD       = "dd_managewp_lazy_load";
+
+    public function DD_ManageWP()
+    {
+        $this->option_append_type     = self::OPTION_APPEND_TYPE;
+        $this->option_button_design   = self::OPTION_BUTTON_DESIGN;
+        $this->option_button_weight   = self::OPTION_BUTTON_WEIGHT;
+        $this->option_ajax_left_float = self::OPTION_AJAX_LEFT_FLOAT;
+        $this->option_lazy_load       = self::OPTION_LAZY_LOAD;
+
+        $this->button_weight_value = self::DEFAULT_BUTTON_WEIGHT;
+
+        parent::BaseDD($this->name, $this->websiteURL, $this->apiURL, $this->baseURL);
+    }
+
+}
+

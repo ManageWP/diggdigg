@@ -13,6 +13,10 @@ $dd_manual_code = array(
 		"Compact" => "dd_buffer_generate('Compact')",
 		"No Count" => "dd_buffer_generate('No Count')"
 	),
+    "ManageWP.org" => array(
+        "Normal" => "dd_managewp_generate('Normal')",
+        "Compact" => "dd_managewp_generate('Compact')",
+    ),
 	"FaceBook Like" => array(
 		"Like Standard" => "dd_fblike_generate('Like Standard')",
 		"Like Button Count" => "dd_fblike_generate('Like Button Count')",
@@ -376,6 +380,15 @@ function dd_tumblr_generate($buttonDesign='Normal'){
 	echo $dd_tumblr->finalURL;
 }
 
+function dd_managewp_generate($buttonDesign='Normal'){
+    $post_data = dd_getPostData();
+
+    $dd_managewp = new DD_ManageWP();
+    $dd_managewp->constructURL($post_data['link'],$post_data['title'],$buttonDesign,$post_data['id'],false);
+
+    echo $dd_managewp->finalURL;
+}
+
 function dd_getPostData() {
 	global $wp_query; 
     $post = $wp_query->post; //get post content
@@ -386,4 +399,3 @@ function dd_getPostData() {
     
     return array( 'id' => $id, 'link' => $link[0], 'title' => $title );
 }
-?>

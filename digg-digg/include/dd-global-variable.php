@@ -118,6 +118,7 @@ define('DD_BUTTON_PINTEREST','dd_button_pinterest');
 define('DD_BUTTON_FLATTR','dd_button_flattr');
 define('DD_BUTTON_POCKET', 'dd_button_pocket');
 define('DD_BUTTON_TUMBLR', 'dd_button_tumblr');
+define('DD_BUTTON_MANAGEWP', 'dd_button_managewp');
 
 /****************************************
  * Digg Digg Global Display (Start)
@@ -149,6 +150,9 @@ define('DD_GLOBAL_FACEBOOK_OPTION_DEFAULT_THUMB','dd_global_facebook_option_defa
 
 define('DD_GLOBAL_FLATTR_OPTION','dd_global_flattr_option');
 define('DD_GLOBAL_FLATTR_OPTION_UID','dd_global_flattr_option_uid');
+
+define('DD_GLOBAL_MANAGEWP_OPTION', 'dd_global_managewp_option');
+define('DD_GLOBAL_MANAGEWP_OPTION_SOURCE', 'dd_global_managewp_option_source');
 
 global $ddGlobalConfig; 
 $ddGlobalConfig = array(
@@ -237,7 +241,8 @@ $ddNormalButtons = array(
 		DD_BUTTON_PINTEREST => new DD_Pinterest(),
 		DD_BUTTON_FLATTR => new DD_Flattr(),
 		DD_BUTTON_POCKET => new DD_Pocket(),
-		DD_BUTTON_TUMBLR => new DD_Tumblr()
+		DD_BUTTON_TUMBLR => new DD_Tumblr(),
+		DD_BUTTON_MANAGEWP => new DD_ManageWP(),
 	),
 	DD_NORMAL_BUTTON_FINAL => array()
 );
@@ -337,7 +342,8 @@ $ddFloatButtons = array(
 		DD_BUTTON_PINTEREST => new DD_Pinterest(),
 		DD_BUTTON_FLATTR => new DD_Flattr(),
 		DD_BUTTON_POCKET => new DD_Pocket(),
-		DD_BUTTON_TUMBLR => new DD_Tumblr()
+		DD_BUTTON_TUMBLR => new DD_Tumblr(),
+		DD_BUTTON_MANAGEWP => new DD_ManageWP(),
 	),
 	DD_FLOAT_BUTTON_FINAL => array()
 );
@@ -345,4 +351,3 @@ $ddFloatButtons = array(
 /*******
  * Digg Digg Floating Display (End)
  ****************************************/
-?>
